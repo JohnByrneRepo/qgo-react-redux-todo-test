@@ -6,10 +6,26 @@
   padding: 5px;
   width: 250px;
   margin: 0 auto;
-  height: 43px;
+  height: 65px;
+}
+
+.itemsList-ul div:first-child {
+  vertical-align: -webkit-baseline-middle;
+  position: relative;
+  top: 5px;
+  float: left;
 }
 
 .itemsList-ul div,
 .itemsList-ul input {
   display: inline;
+}
+
+.hideCompletedCheckbox {
+  position: relative;
+  top: 40px;
+}
+.hideCompletedCheckboxLabel::before {
+  position: relative;
+  /*right: 30px;*/
 }

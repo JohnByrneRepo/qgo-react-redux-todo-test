@@ -7,13 +7,15 @@ class ItemRemover extends Component {
   }
 
   render() {
+    let visible = !(this.props.completedTodosHidden && this.props.completed);
     return (<div>
-      <div className="itemRemover" onClick={(e) => {
-        let id = this.props.id;
-        this.props.onRemove(id);
-      }}>
-        X
-      </div>
+      {visible &&
+        <div className="itemRemover" onClick={(e) => {
+          let id = this.props.id;
+          this.props.onRemove(id);
+        }}>
+          X
+        </div>}
     </div>)
   }
 }

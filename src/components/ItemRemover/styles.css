@@ -1,6 +1,8 @@
 .itemRemover {
   background: #0000ff;
-  padding: 7px 12px;
+  padding: 2px 6px;
+  margin-top: 16px;
+  margin-left: 34px;
   font-size: 20px;
   float: right;
   border-radius: 4px;

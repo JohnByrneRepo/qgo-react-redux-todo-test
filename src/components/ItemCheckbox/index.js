@@ -7,15 +7,17 @@ class ItemCheckbox extends Component {
   }
 
   render() {
-    return (
-      <div className="md-checkbox">
-        <input type="checkbox" className="itemCheckbox" id={this.props.id} onClick={(e) => {
-          let id = this.props.id;
-          this.props.onToggle(id);
-        }} />
-        <label className="itemCheckboxLabel" htmlFor={this.props.id}>{this.props.label}</label>
-      </div>
-    )
+    let visible = !(this.props.completedTodosHidden && this.props.completed);
+    return (<div>
+      {visible &&
+        <div className="md-checkbox">
+          <input type="checkbox" className="itemCheckbox" id={this.props.id} onClick={(e) => {
+            let id = this.props.id;
+            this.props.onToggle(id);
+          }} />
+          <label className="itemCheckboxLabel" htmlFor={this.props.id}>{this.props.label}</label>
+        </div>}
+    </div>)
   }
 }
 
