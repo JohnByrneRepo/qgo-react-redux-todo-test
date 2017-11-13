@@ -9,12 +9,7 @@
   height: 43px;
 }
 
-.itemsList-ul div {
+.itemsList-ul div,
+.itemsList-ul input {
   display: inline;
-}
-
-.itemsList-ul div:first-child {
-  vertical-align: -webkit-baseline-middle;
-  position: relative;
-  top: 5px;
 }
