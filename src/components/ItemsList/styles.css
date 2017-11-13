@@ -1,0 +1,20 @@
+.itemsList-ul {
+  list-style-type: none;
+}
+
+.itemsList-ul li {
+  padding: 5px;
+  width: 250px;
+  margin: 0 auto;
+  height: 43px;
+}
+
+.itemsList-ul div {
+  display: inline;
+}
+
+.itemsList-ul div:first-child {
+  vertical-align: -webkit-baseline-middle;
+  position: relative;
+  top: 5px;
+}

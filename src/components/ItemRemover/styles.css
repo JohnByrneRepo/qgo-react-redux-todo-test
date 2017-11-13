@@ -1,0 +1,9 @@
+.itemRemover {
+  background: #0000ff;
+  padding: 7px 12px;
+  font-size: 20px;
+  float: right;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
