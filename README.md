@@ -1,5 +1,7 @@
 ![Sky logo](./docs/assets/logo.png)
 
+Please see https://johnbyrnerepo.github.io/qgo-react-redux-todo-test/public/index.html for a live version.
+
 # QGO Desktop Assessment
 
 ## Overview
