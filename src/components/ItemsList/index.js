@@ -13,9 +13,7 @@ class ItemsList extends Component {
     };
   }
 
-// export const ItemsList = ({ items, onRemove, onToggle, onHideCompletedTodos }) => {
   render() {
-    // debugger;
     return (
       <div>
         <ul className="itemsList-ul">
