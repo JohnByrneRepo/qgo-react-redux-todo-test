@@ -15,16 +15,16 @@ export const toggleItem = id => {
   return { type: TOGGLE_ITEM, id };
 };
 
-export const hideCompletedTodos = id => {
-  return { type: HIDE_COMPLETED_TODOS, id };
+export const hideCompletedTodos = hidden => {
+  return { type: HIDE_COMPLETED_TODOS, hidden };
 };
 
 export const initialState = {
   completedTodosHidden: false,
   items: [
-    { id: 1, content: 'Call mum', completed: false },
-    { id: 2, content: 'Buy cat food', completed: false },
-    { id: 3, content: 'Water the plants', completed: false },
+    { id: 1, content: 'Call mum', completed: false, hidden: false },
+    { id: 2, content: 'Buy cat food', completed: false, hidden: false },
+    { id: 3, content: 'Water the plants', completed: false, hidden: false },
   ],
 };
 
@@ -58,12 +58,21 @@ const reducer = (state = initialState, action) => {
       });
       return {
         ...state,
-        items: items
+        items
       }
     case HIDE_COMPLETED_TODOS:
+      var items = [];
+      state.items.forEach(item => {
+        if (item.completed && !action.hidden) {
+          item.hidden = true;
+        } else {
+          item.hidden = false;
+        }
+        items.push(item);
+      });
       return {
         ...state,
-        completedTodosHidden: !state.completedTodosHidden
+        items
       }
     default:
       return state;

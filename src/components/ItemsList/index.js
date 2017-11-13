@@ -8,6 +8,9 @@ import './styles.css';
 class ItemsList extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      hidden: false
+    };
   }
 
 // export const ItemsList = ({ items, onRemove, onToggle, onHideCompletedTodos }) => {
@@ -21,13 +24,13 @@ class ItemsList extends Component {
             <li key={item.id}>
               <ItemCheckbox
                 completed={item.completed}
-                completedTodosHidden={this.props.completedTodosHidden}
+                hidden={item.hidden}
                 onToggle={this.props.onToggle}
                 id={item.id}
                 label={item.content} />
               <ItemRemover
                 completed={item.completed}
-                completedTodosHidden={this.props.completedTodosHidden}
+                hidden={item.hidden}
                 onRemove={this.props.onRemove}
                 id={item.id} />
             </li>
@@ -37,8 +40,12 @@ class ItemsList extends Component {
           <input type="checkbox"
             className="itemCheckbox"
             id="hideCompletedCheckbox"
-            onClick={this.props.onHideCompletedTodos}
-          />
+            onClick={(e) => {
+              this.setState({
+                hidden: !this.state.hidden
+              });
+              this.props.onHideCompletedTodos(this.state.hidden)
+          }} />
           <label className="hideCompletedCheckboxLabel" htmlFor="hideCompletedCheckbox">Hide completed?</label>
         </div>
       </div>
@@ -63,7 +70,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   onToggle: id => dispatch(toggleItem(id)),
   onRemove: id => dispatch(removeItem(id)),
-  onHideCompletedTodos: () => dispatch(hideCompletedTodos())
+  onHideCompletedTodos: hidden => dispatch(hideCompletedTodos(hidden))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ItemsList);
