@@ -61,14 +61,14 @@ ItemsList.defaultProps = {
   completedTodosHidden: false
 };
 
-const mapStateToProps = state => {
+const mapState = state => {
   return { completedTodosHidden: state.todos.completedTodosHidden, items: state.todos.items };
 };
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatch = dispatch => ({
   onToggle: id => dispatch(toggleItem(id)),
   onRemove: id => dispatch(removeItem(id)),
   onHideCompletedTodos: hidden => dispatch(hideCompletedTodos(hidden))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ItemsList);
+export default connect(mapState, mapDispatch)(ItemsList);
