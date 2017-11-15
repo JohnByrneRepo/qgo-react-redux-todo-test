@@ -30,6 +30,7 @@
     "eslint-plugin-babel": "^3.0.0",
     "eslint-plugin-react": "^7.1.0",
     "eventsource-polyfill": "^0.9.6",
+    "immutable": "^3.8.2",
     "prop-types": "15.5.10",
     "react": "15.6.1",
     "react-dom": "15.6.1",

@@ -2,6 +2,10 @@
 
 Please see https://johnbyrnerepo.github.io/qgo-react-redux-todo-test/public/index.html for a live version.
 
+This is built on https://github.com/sitepoint-editors/immutable-redux-todo, using facebook's immutable.js for high performance state reduction.
+
+To-do: add redux saga for simulated server requests
+
 # QGO Desktop Assessment
 
 ## Overview

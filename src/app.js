@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import configureStore from './redux/store';
+import { createStore } from 'redux';
 import Header from './components/Header';
-import ItemCreator from './components/ItemCreator';
-import ItemsList from './components/ItemsList';
+import { ItemsListContainer } from './containers/ItemsListContainer';
+import reducer from './reducers/items';
 import './app.css';
 
-const store = configureStore();
+const store = createStore(reducer);
 
 class App extends Component {
   render() {
@@ -15,8 +15,7 @@ class App extends Component {
         <div className="app">
           <Header />
           <div>
-            <ItemCreator />
-            <ItemsList />
+            <ItemsListContainer />
           </div>
         </div>
       </Provider>

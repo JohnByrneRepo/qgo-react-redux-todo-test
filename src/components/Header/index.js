@@ -5,10 +5,9 @@ import './styles.css';
 const Header = () => {
   return (
     <div className="header-title">
-      <h2>QGo Desktop React Assessment</h2>
+      <h2>React to-do list with immutable.js and redux-saga</h2>
     </div>
   );
 };
-//       <img src={logo} className="header-logo" alt="logo" />
 
 export default Header;
